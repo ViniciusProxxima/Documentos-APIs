@@ -1,4 +1,4 @@
-# 📡 Proxxima Integration APIs
+# Proxxima Integration APIs
 
 Documentação oficial das APIs utilizadas nas integrações internas da **Proxxima Telecom**.
 
@@ -6,7 +6,7 @@ Este repositório centraliza os endpoints utilizados para integração com difer
 
 ---
 
-# 📑 Sumário
+# Sumário
 
 - Arquitetura
 - Autenticação
@@ -19,7 +19,7 @@ Este repositório centraliza os endpoints utilizados para integração com difer
 
 ---
 
-# 🧩 Arquitetura
+# Arquitetura
 
 As APIs documentadas neste repositório fazem parte do ecossistema de integração do provedor.
 
@@ -45,7 +45,7 @@ Essas integrações permitem automações como:
 
 ---
 
-# 🔐 Autenticação
+# Autenticação
 
 Cada API possui um método de autenticação diferente.
 
@@ -58,7 +58,7 @@ Cada API possui um método de autenticação diferente.
 
 ---
 
-# 💰 7AZ API
+# 7AZ API
 
 Base URL
 
@@ -66,7 +66,7 @@ https://api.7az.com.br/v2
 
 ---
 
-## 📄 Listar Faturas
+## Listar Faturas
 
 Retorna todas as faturas associadas a um CPF ou CNPJ.
 
@@ -103,7 +103,7 @@ Exemplo de resposta
 
 ---
 
-## 💳 Faturas Disponíveis para Negociação
+## Faturas Disponíveis para Negociação
 
 Retorna faturas elegíveis para renegociação.
 
@@ -117,7 +117,7 @@ GET /negotiations/invoices-available-for-negotiation?txId={cpf}
 
 ---
 
-## 💳 Dados de Pagamento
+## Dados de Pagamento
 
 Retorna dados de pagamento de uma fatura.
 
@@ -138,7 +138,7 @@ Parâmetros
 
 ---
 
-# 📡 Flashman API
+# Flashman API
 
 Base URL
 
@@ -146,7 +146,7 @@ https://flashman.proxxima.net/api/v3
 
 ---
 
-## 📶 Site Survey do Dispositivo
+## Site Survey do Dispositivo
 
 Retorna redes WiFi detectadas pelo dispositivo.
 
@@ -172,7 +172,7 @@ Content-Type: application/json
 
 ---
 
-# 🧰 GCX API
+# GCX API
 
 Base URL
 
@@ -180,7 +180,7 @@ https://gcx.proxxima.net
 
 ---
 
-## 📋 Eventos de Atendimento
+## Eventos de Atendimento
 
 Consulta histórico de eventos de um contrato.
 
@@ -208,7 +208,7 @@ Parâmetros
 
 ---
 
-## 🏢 Consulta de Lojas
+## Consulta de Lojas
 
 Retorna as lojas disponíveis por cidade.
 
@@ -222,7 +222,7 @@ GET https://gcx.proxxima.net/api_lojas.php?cidade=Campina%20Grande
 
 ---
 
-## 🧰 Consulta OLT / Slot / Porta
+## Consulta OLT / Slot / Porta
 
 Retorna o último registro de um equipamento GPON.
 
@@ -248,7 +248,7 @@ Authorization: Basic {BASE64}
 
 ---
 
-# 🗺 Geogrid / Zeus API
+# Geogrid / Zeus API
 
 Base URL
 
@@ -256,7 +256,7 @@ https://zeus.geogridmaps.com.br
 
 ---
 
-## 📍 Converter Endereço em Coordenadas
+## Converter Endereço em Coordenadas
 
 Transforma endereço em latitude e longitude.
 
@@ -282,7 +282,7 @@ Body
 
 ---
 
-## 📡 Consulta de Viabilidade
+## Consulta de Viabilidade
 
 Consulta equipamentos dentro de um raio geográfico.
 
@@ -315,31 +315,31 @@ itens[]=terminal
 
 ---
 
-# 🔄 Fluxos de Integração
+# Fluxos de Integração
 
 Principais fluxos automatizados:
 
-1️⃣ **Consulta de Faturas**
+**Consulta de Faturas**
 
 Bot / CRM  
 → 7AZ API  
 → Retorno de faturas  
 → Exibição ao cliente
 
-2️⃣ **Diagnóstico de WiFi**
+**Diagnóstico de WiFi**
 
 Cliente relata problema  
 → Flashman API  
 → Site Survey  
 → Análise de interferência
 
-3️⃣ **Histórico de Atendimento**
+**Histórico de Atendimento**
 
 CRM / Bot  
 → GCX API  
 → Eventos de atendimento
 
-4️⃣ **Consulta de Viabilidade**
+**Consulta de Viabilidade**
 
 Endereço informado  
 → Geogrid API  
@@ -348,20 +348,7 @@ Endereço informado
 
 ---
 
-# ✅ Boas Práticas
-
-Recomendações para utilização das APIs:
-
-- Nunca expor **API Keys** em código público
-- Utilizar **variáveis de ambiente**
-- Implementar **timeout e retry**
-- Monitorar endpoints via **Grafana**
-- Criar **logs de integração**
-- Utilizar **cache para consultas frequentes**
-
----
-
-# 📚 Observações
+# Observações
 
 Esta documentação reúne os principais endpoints utilizados nas integrações internas da **Proxxima Telecom**.
 
